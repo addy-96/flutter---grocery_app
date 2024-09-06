@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prm_cart/screens/onboarding_view.dart';
 import 'package:prm_cart/wrapper.dart';
 
 void main() {
@@ -13,6 +14,6 @@ class PrmCart extends StatelessWidget {
   const PrmCart({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Wrapper();
+    return OnboardingView();
   }
 }
