@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prm_cart/screens/onboarding_view.dart';
-import 'package:prm_cart/wrapper.dart';
+import 'package:prm_cart/screens/home.dart';
 
 void main() {
   runApp(
@@ -14,6 +13,6 @@ class PrmCart extends StatelessWidget {
   const PrmCart({super.key});
   @override
   Widget build(BuildContext context) {
-    return OnboardingView();
+    return const Home();
   }
 }
