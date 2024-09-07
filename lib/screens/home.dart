@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prm_cart/theme/style.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,11 +11,31 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+       title:  Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+          const Row(
+            children: [
+              Text('prm ',style: TextStyle(color: Colors.red,fontFamily: 'Lato',fontSize: 30),),
+              Text('Cart',style: TextStyle(color: Colors.black,fontFamily: 'Lato',fontSize: 30),),
+            ],
+           ),
+           Material(
+            borderRadius: BorderRadius.circular(15),
+            elevation: 5,
+            child: const Padding(
+              padding:  EdgeInsets.all(8.0),
+              child: Icon(Icons.person_outline),
+            ),
+           )
+         ],
+       ),
+      ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8,right: 8),
             child: Column(
               children: [
                 locationbar(),
@@ -40,7 +59,6 @@ class _HomeState extends State<Home> {
                   const SizedBox(height: 5),
                   orderAgainStack(),
                   const SizedBox(height: 5),
-                  shopByCategory(),
                 ],
               ),
             ),
@@ -355,6 +373,7 @@ Widget sideScrollView() {
   );
 }
 
+// error in this part to be resolved later
 Widget shopByCategory() {
   return Column(
     children: [

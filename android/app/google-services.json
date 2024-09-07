@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829753064945",
+    "project_id": "prm-cart",
+    "storage_bucket": "prm-cart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829753064945:android:a8cdeb76110d8ce8985850",
+        "android_client_info": {
+          "package_name": "com.example.prm_cart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB3nYGxCXWwqn1FmjI7dvc0K566oadueU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
