@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prm_cart/services/authServices.dart';
+import 'package:prm_cart/screens/admin/admin_login.dart';
+import 'package:prm_cart/services/auth_services.dart';
+import 'package:prm_cart/theme/logo.dart';
 import 'package:prm_cart/theme/style.dart';
 
 class Auth extends StatefulWidget {
@@ -18,8 +20,12 @@ class _LoginState extends State<Auth> {
   final _formKey = GlobalKey<FormState>();
 
   String? _enteredUsername;
+
   String? _enteredEmail;
+
   String? _enteredPassword;
+
+  
 
   _onAuthSignTap() {
     bool isVlaid = _formKey.currentState!.validate();
@@ -37,6 +43,12 @@ class _LoginState extends State<Auth> {
     }
   }
 
+/* Image.asset(
+                'assets/images/authBackground.jpg',
+                height: MediaQuery.of(context).size.height / 2,
+                fit: BoxFit.fill,
+              ),*/
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -46,10 +58,18 @@ class _LoginState extends State<Auth> {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                'assets/images/authBackground.jpg',
+              Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                      Color.fromARGB(255, 28, 177, 33),
+                      Color.fromARGB(255, 194, 226, 195),
+                    ])),
+                width: double.infinity,
                 height: MediaQuery.of(context).size.height / 2,
-                fit: BoxFit.fill,
+                child: logo(Colors.black),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +127,7 @@ class _LoginState extends State<Auth> {
                         children: [
                           Text(
                             widget.authType == 'login' ? 'Login' : 'Sign up',
-                            style: AppWidget().textStyle(32),
+                            style: AppWidget().textStyle(32, Colors.black),
                           ),
                           if (widget.authType == 'signup')
                             Padding(
@@ -216,11 +236,27 @@ class _LoginState extends State<Auth> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (ctx) => const AdminLogin(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      'Admin Login ',
+                                      style: AppWidget()
+                                          .textStyle(20, Colors.black38),
+                                    ),
+                                  ),
                                   Text(
                                     'Forgot Password ? ',
-                                    style: AppWidget().textStyle(20),
+                                    style: AppWidget()
+                                        .textStyle(20, Colors.black38),
                                   ),
                                 ],
                               ),

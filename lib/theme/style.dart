@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppWidget {
-  TextStyle textStyle(double size) => TextStyle(
-        fontFamily: 'Lato',
-        fontSize: size,
-      );
+  TextStyle textStyle(double size, Color color) =>
+      TextStyle(fontFamily: 'Lato', fontSize: size, color: color);
 
   TextStyle green32() =>
       const TextStyle(color: Colors.green, fontSize: 25, fontFamily: 'Lato');
@@ -25,4 +23,13 @@ class AppWidget {
       );
   TextStyle categoriesExploreButtontext() =>
       const TextStyle(fontFamily: 'Lato', fontSize: 15);
+
+  TextStyle profileOptionBarText() => const TextStyle(
+      fontFamily: 'Lato', fontSize: 16, fontWeight: FontWeight.bold);
+
+  TextStyle profileAppOptions() => const TextStyle(
+      fontFamily: 'Lato',
+      fontSize: 16,
+      color: Colors.black45,
+      fontWeight: FontWeight.bold);
 }

@@ -5,10 +5,9 @@ getSnackbar(BuildContext context, String message, Color color) {
   ScaffoldMessenger.of(context).clearSnackBars();
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(message,style: AppWidget().textStyle(28),),
+      content: Text(message,style: AppWidget().textStyle(15,Colors.black),),
       backgroundColor: color,
-      elevation: 5,
-      
+      elevation: 5, 
     ),
   );
 }
